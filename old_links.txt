@@ -1,0 +1,62 @@
+<?php
+session_start();
+if(isset($_POST)){
+$inf = $_POST;
+if($inf['p'][0] == "1" && $inf['p'][1] == "1")
+{
+$_SESSION['level'] = "a";
+
+}elseif($inf['p'][0] == "2" && $inf['p'][1] == "2")
+{
+$_SESSION['level'] = "b";
+
+}elseif($inf['p'][0] == "3" && $inf['p'][1] == "3")
+{
+$_SESSION['level'] = "c";
+
+}else{
+    $_SESSION['level'] = false;
+}
+
+}else{
+    $_SESSION['level'] = false;
+}
+
+if($_SESSION['level'] != false){
+    echo 'you are login && your user level is '.$_SESSION['level'];
+}else{
+    echo 'your not login';
+}
+?>
+
+<form method="post">
+<input placeholder="username" type="text" name="p[]"/>
+<input placeholder="password" name="p[]"/>
+<input type="submit" value="login" />
+</form>
+
+
+
+
+
+<script>
+
+document.write('<a href="http://mysitegig.gigfa.com/testpic/img/foldera/a1.jpg" target="_blank">a1</a><hr/>'+
+'<a href="http://mysitegig.gigfa.com/testpic/img/foldera/a2.jpg" target="_blank">a2</a><hr/>'+
+'<a href="http://mysitegig.gigfa.com/testpic/img/foldera/a3.jpg" target="_blank">a3</a><hr/>'+
+'<a href="http://mysitegig.gigfa.com/testpic/img/folderb/b1.jpg" target="_blank">b1</a><hr/>'+
+'<a href="http://mysitegig.gigfa.com/testpic/img/folderb/b2.jpg" target="_blank">b2</a><hr/>'+
+'<a href="http://mysitegig.gigfa.com/testpic/img/folderb/b3.jpg" target="_blank">b3</a><hr/>'+
+'<a href="http://mysitegig.gigfa.com/testpic/img/folderc/c1.jpg" target="_blank">c1</a><hr/>'+
+'<a href="http://mysitegig.gigfa.com/testpic/img/folderc/c2.jpg" target="_blank">c2</a><hr/>'+
+'<a href="http://mysitegig.gigfa.com/testpic/img/folderc/c3.jpg" target="_blank">c3</a><hr/>')
+
+
+
+
+
+
+
+
+
+</script>

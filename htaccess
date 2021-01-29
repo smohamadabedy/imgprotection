@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /testpic/index.php?path=$1 [NC,L,QSA]
+
+RewriteEngine on 
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?mysitegig.gigfa.com/testpic/img [NC] 
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?mysitegig.gigfa.com/testpic/img.*$ [NC] 
+RewriteCond %{HTTP_REFERER} !^http://(.)?mysitegig.gigfa.com/testpic/img [NC] 
+RewriteCond %{HTTP_REFERER} !^http://(.)?mysitegig.gigfa.com/testpic/img.*$ [NC] 
+RewriteRule \.(jpg)$ - [F]
